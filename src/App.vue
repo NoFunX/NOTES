@@ -1,18 +1,65 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1> {{ title }} </h1>
+    <error :error="error"/>
+    <newNote @addNote="addNote" :note="note"/>
+    <note :notes="notes"/>
+    
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import error from './components/Error'
+import newNote from './components/NewNote'
+import note from './components/Note'
+
 
 export default {
-  name: 'App',
+  data(){
+    return {
+      title: 'Your Notes',
+      error: null,
+      note: {
+        title: 'Title',
+        description: 'Description',
+    },
+
+      notes: [
+        {
+          title: '',
+          description: '',
+          date: '',
+          button: ''
+        },
+        
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    error, newNote, note
+},
+  methods: {
+
+    addNote(){
+      if(this.note.title==='' || this.note.description==='') {
+        this.error = 'fields cant be blank!'
+        return false
+      }
+
+      this.notes.push({
+        title: this.note.title,
+        description: this.note.description,
+        date: new Date(Date.now()).toLocaleDateString(),
+        button: '❌'
+      })
+      this.error=''
+      this.note.title=''
+      this.note.description=''
+    },
+
   }
+  
 }
 </script>
 
