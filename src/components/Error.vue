@@ -19,7 +19,8 @@ export default {
 <style lang="scss" scoped>
 
     .error_p {
-        color: red;
+        color: 'red';
+        opacity: 0;
     }
 
 </style>
