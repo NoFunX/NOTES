@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="notes">
-            <div class="note" v-for="(note, index) in notes" :key="index">
+            <div @click="clickNote()" class="note" v-for="(note, index) in notes" :key="index">
                 <div class="header">
                 <span class="header_title"> {{ note.title }}</span>
                 <button @click="removeNote(index)" class="header_delete"> {{ note.button }} </button>
@@ -25,6 +25,10 @@ export default {
     methods: {
         removeNote(index) {
            this.notes.splice(index, 1)
+        },
+
+        clickNote($event){
+            $event.style.width="100%"
         }
     }
     
@@ -45,8 +49,11 @@ export default {
             margin-left: 1.5%;
             margin-right: 1.5%;
             border: 1px solid #748bfc;
-            border-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
             background-color: white;
+            box-shadow: 0 3px 10px #334bc3;
+            cursor: pointer;
 
             .header {
                 display: flex;
@@ -57,13 +64,15 @@ export default {
                 .header_title {
                     font-size: 20px;
                     margin: 5px;
-                    color:  #5432a8;
+                    color:  #334bc3;
                     text-align: left;
+                    
+
 }
 
                 .header_delete {
                 border: 0px;
-                color: red;
+                color: #233bb6;
                 cursor: pointer;
                 background: white;
             }
@@ -78,8 +87,9 @@ export default {
                 color:  black;
                 text-align: left;
                 display: block;
-                width: 40%;
                 font-size: 14px;
+                border-radius: 5px;
+                padding: 5px;
             }
 
             .note_date {
@@ -87,7 +97,10 @@ export default {
                 text-align: right;
                 margin-right: 5px;
                 margin-bottom: 5px;
-                font-size: 14px;
+                font-size: 12px;
+                color: #2b206d;
+                margin-top: 9px;
+                
 
             }
 

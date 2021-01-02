@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <h1> {{ title }} </h1>
-    <error :error="error"/>
     <newNote @addNote="addNote" :note="note"/>
     <note :notes="notes"/>
 
@@ -11,17 +10,15 @@
 </template>
 
 <script>
-import error from './components/Error'
 import newNote from './components/NewNote'
 import note from './components/Note'
-
 
 
 export default {
   data(){
     return {
       title: 'Твои заметки',
-      error: 'поля не могут быть пустыми!',
+      search: '',
       note: {
         title: '',
         description: '',
@@ -39,13 +36,13 @@ export default {
     }
   },
   components: {
-    error, newNote, note
+    newNote, note
 },
   methods: {
 
     addNote(){
       if(this.note.title==='' || this.note.description==='') {
-        this.error.style.color = 'red'
+      
         return false
       }
 
@@ -55,33 +52,29 @@ export default {
         date: new Date(Date.now()).toLocaleDateString(),
         button: 'X'
       })
-      this.error=''
       this.note.title=''
       this.note.description=''
     },
-    
-      
-    
-
-  }
+},
   
 }
 </script>
 
 <style lang="scss">
 body {
-  background-color: #ebebed;
+  background-color: #e9e9f3;
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 30px;
+  color: #778ba1;
+  margin-top: 15px;
 
     h1 {
-      color: #5432a8;
+      color: #4c60c5;
       font-size: 22px;
+
     }
 }}
 </style>
