@@ -21,7 +21,7 @@ import search from './components/Search'
 export default {
   data(){
     return {
-      title: 'Твои заметки',
+      title: 'ТВОИ ЗАМЕТКИ',
       search: '',
       note: {
         title: '',
@@ -84,7 +84,8 @@ computed: {
 
 <style lang="scss">
 body {
-  background-color: white;
+  background-image: url("D:/mine/учеба/vue-cli/src/assets/dd110210da10519545578be3599f8445.png");
+  background-size: cover;
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -94,7 +95,7 @@ body {
   margin-top: 15px;
 
     h1 {
-      color: #3C6A96;
+      color: white;
       font-size: 22px;
 
     }

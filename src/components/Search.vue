@@ -1,6 +1,6 @@
 <template>
     <div class="search">
-        <input class="search_input" type="text" placeholder="Поиск по заметкам" v-model="search">
+        <input class="search_input" type="text" placeholder="Поиск" v-model="search">
     </div>    
 </template>
 
@@ -30,12 +30,14 @@ export default {
 <style scoped>
 
     .search_input {
-        color: #3C6A96;
-        background-color: white;
+        color: rgb(90, 90, 90);;
+        background-color: whitesmoke;
         width: 30%;
         border: 0px;
-        border-bottom: 1px solid #3C6A96;
+        border: 1px solid black;
         padding: 0 5px 0px 10px;
+        border-radius: 5px;
+        padding: 5px;
     }
 
     .search_input:focus {
