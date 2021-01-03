@@ -48,11 +48,10 @@ export default {
             margin-bottom: 20px;
             margin-left: 1.5%;
             margin-right: 1.5%;
-            border: 1px solid #748bfc;
+            border: 1px solid #74A2CF;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
-            background-color: white;
-            box-shadow: 0 3px 10px #334bc3;
+            box-shadow: 0 3px 10px #74A2CF;
             cursor: pointer;
 
             .header {
@@ -64,7 +63,7 @@ export default {
                 .header_title {
                     font-size: 20px;
                     margin: 5px;
-                    color:  #334bc3;
+                    color:  #3C6A96;
                     text-align: left;
                     
 
@@ -72,7 +71,7 @@ export default {
 
                 .header_delete {
                 border: 0px;
-                color: #233bb6;
+                color: black;
                 cursor: pointer;
                 background: white;
             }
@@ -98,7 +97,7 @@ export default {
                 margin-right: 5px;
                 margin-bottom: 5px;
                 font-size: 12px;
-                color: #2b206d;
+                color:#3C6A96;
                 margin-top: 9px;
                 
 

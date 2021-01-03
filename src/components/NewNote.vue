@@ -34,7 +34,7 @@ export default {
         width: 30%;
 
         .wrapper_label {
-            color: #334bc3;
+            color:#3C6A96;
             font-size: 16px;
         }
         .wrapper_input{
@@ -42,11 +42,11 @@ export default {
             padding: 5px 5px 5px 10px;
             margin: 5px auto;
             margin-bottom: 10px;
-            border: 1px solid #748bfc;
+            border: 1px solid #3C6A96;
             width: 95%;
             font-size: 14px;
             border-radius: 5px;
-            color: #334bc3;
+            color: #3C6A96;
         }
         
         .wrapper_input:focus {
@@ -54,7 +54,7 @@ export default {
             
         }
         .wrapper_span {
-            color: #334bc3;
+            color: #3C6A96;
             margin:0px;
             font-size: 16px;
         }
@@ -65,11 +65,11 @@ export default {
             margin: 5px auto;
             padding: 5px 11px 5px 11px;
             border: 0px;
-            border: 1px solid #748bfc;
+            border: 1px solid #3C6A96;
             width: 95%;
             border-radius: 5px;
             font-size: 14px;
-            color: #334bc3;
+            color: #3C6A96;
         }
 
         .wrapper_textarea:focus {
@@ -79,7 +79,7 @@ export default {
         .wrapper_button{
             font-size: 15px;
             margin: 15px auto;
-            background-color: #4258c7;
+            background-color: #3C6A96;
             color: white;
             padding: 10px 30px 10px 30px;
             display: block;

@@ -2,7 +2,10 @@
   <div id="app">
     <h1> {{ title }} </h1>
     <newNote @addNote="addNote" :note="note"/>
-    <note :notes="notes"/>
+    <search :value="search" @search="search=$event" />
+    <note :notes="notesFilter"/>
+
+
 
     
     
@@ -12,6 +15,7 @@
 <script>
 import newNote from './components/NewNote'
 import note from './components/Note'
+import search from './components/Search'
 
 
 export default {
@@ -36,7 +40,7 @@ export default {
     }
   },
   components: {
-    newNote, note
+    newNote, note, search
 },
   methods: {
 
@@ -56,13 +60,31 @@ export default {
       this.note.description=''
     },
 },
+
+computed: {
+  notesFilter(){
+    let array = this.notes
+    let search = this.search
+    
+    if(!search) return array
+
+    search = search.trim().toLowerCase()
+    array = array.filter(function(item){
+      if(item.title.toLowerCase().indexOf(search) !== -1) {
+        return item
+      }
+    })
+    
+    return array
+  }
+}
   
 }
 </script>
 
 <style lang="scss">
 body {
-  background-color: #e9e9f3;
+  background-color: white;
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -72,7 +94,7 @@ body {
   margin-top: 15px;
 
     h1 {
-      color: #4c60c5;
+      color: #3C6A96;
       font-size: 22px;
 
     }
