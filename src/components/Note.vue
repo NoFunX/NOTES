@@ -72,7 +72,7 @@ export default {
 
                 .header_delete {
                 border: 0px;
-                color: rgb(105, 105, 105);
+                color: black;
                 cursor: pointer;
                 background: white;
             }
